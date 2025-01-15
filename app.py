@@ -1,3 +1,11 @@
+import nltk
+
+# Automatically download 'punkt' if not already available
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
+
 from user_onboarding import user_onboarding
 from session_functions import load_session, delete_session, save_session
 from logging_functions import reset_log
